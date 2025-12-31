@@ -1,0 +1,300 @@
+# Sistema de Processamento de Dados Governamentais
+
+## Descrição
+
+Sistema desenvolvido em Python para processamento, limpeza e análise de dados governamentais provenientes de bases de dados públicas. O projeto realiza tratamento completo de dados CSV, incluindo validação, padronização, análise estatística e geração de relatórios detalhados.
+
+O objetivo é fornecer uma solução robusta e profissional para tratamento inicial de dados, comum em projetos de análise de dados e automação de processos de ETL (Extract, Transform, Load).
+
+## Fonte dos Dados
+
+**Banco Central do Brasil - Dados Abertos**  
+https://dadosabertos.bcb.gov.br
+
+## Funcionalidades Principais
+
+### Processamento de Dados
+
+- Leitura de arquivos CSV com separador personalizado
+- Tratamento e padronização de nomes de colunas
+- Identificação e tratamento de valores nulos
+- Remoção de registros duplicados
+- Conversão de tipos de dados (datas, valores numéricos)
+- Extração de informações temporais (ano, mês, período)
+
+### Análise Estatística
+
+- Estatísticas descritivas gerais (média, mediana, desvio padrão)
+- Análise por período (ano, mês)
+- Cálculo de tendências e crescimento
+- Identificação de períodos com maiores valores
+- Análise por décadas
+
+### Geração de Relatórios
+
+- Relatório textual completo com todas as análises
+- Exportação de estatísticas detalhadas em CSV
+- Geração de arquivos Excel para visualização
+- Formatação profissional com espaçamento adequado
+
+### Organização de Arquivos
+
+- Salvamento automático na pasta de dados
+- Múltiplos formatos de saída (CSV, Excel, TXT)
+- Nomenclatura consistente e organizada
+
+## Estrutura do Projeto
+
+```
+Dados/
+├── data/
+│   ├── governo.csv                          # Arquivo de entrada
+│   ├── governo_processado.csv               # Dados processados
+│   ├── governo_processado.xlsx              # Versão Excel
+│   ├── governo_processado_relatorio.txt    # Relatório textual
+│   ├── governo_processado_estatisticas_ano.csv
+│   └── governo_processado_estatisticas_mes.csv
+├── notebooks/
+│   └── dados_entrada.py                    # Script principal
+├── tests/
+│   └── test_env.py                         # Testes de ambiente
+├── requirements.txt                         # Dependências
+└── Readme                                   # Documentação
+```
+
+## Requisitos
+
+- Python 3.7 ou superior
+- pandas >= 1.5.3
+- numpy >= 1.22.4
+- openpyxl >= 3.1.5 (para exportação Excel)
+
+## Instalação
+
+### 1. Clone o repositório
+
+```bash
+git clone <url-do-repositorio>
+cd Dados
+```
+
+### 2. Crie um ambiente virtual (recomendado)
+
+```bash
+python -m venv venv
+```
+
+### 3. Ative o ambiente virtual
+
+**Windows:**
+```bash
+venv\Scripts\activate
+```
+
+**Linux/Mac:**
+```bash
+source venv/bin/activate
+```
+
+### 4. Instale as dependências
+
+```bash
+pip install -r requirements.txt
+```
+
+Ou instale manualmente:
+
+```bash
+pip install pandas numpy openpyxl
+```
+
+## Como Executar
+
+### Execução Básica
+
+```bash
+python notebooks/dados_entrada.py
+```
+
+### Execução com Ambiente Virtual
+
+```bash
+# Ative o ambiente virtual primeiro
+venv\Scripts\activate  # Windows
+# ou
+source venv/bin/activate  # Linux/Mac
+
+# Execute o script
+python notebooks/dados_entrada.py
+```
+
+## Arquivos Gerados
+
+Após a execução, os seguintes arquivos serão gerados na pasta `data/`:
+
+1. **governo_processado.csv**
+   - Dados completos processados e limpos
+   - Formato CSV com separador ponto e vírgula
+   - Ordenado por data
+
+2. **governo_processado.xlsx**
+   - Versão Excel dos dados processados
+   - Facilita visualização e análise manual
+
+3. **governo_processado_relatorio.txt**
+   - Relatório textual completo
+   - Contém todas as análises estatísticas
+   - Informações sobre tendências e distribuições
+
+4. **governo_processado_estatisticas_ano.csv**
+   - Estatísticas agregadas por ano
+   - Inclui: registros, soma, média, mediana, desvio padrão, mínimo, máximo
+
+5. **governo_processado_estatisticas_mes.csv**
+   - Estatísticas agregadas por mês
+   - Inclui: registros, soma, média, mediana
+
+## Fluxo de Processamento
+
+O sistema executa as seguintes etapas em sequência:
+
+1. **Leitura de Dados**
+   - Carrega arquivo CSV de entrada
+   - Valida formato e estrutura
+
+2. **Tratamento de Colunas**
+   - Padroniza nomes (minúsculas, sem espaços)
+   - Valida existência de colunas necessárias
+
+3. **Tratamento de Valores Nulos**
+   - Identifica valores faltantes
+   - Preenche com média da coluna (valores numéricos)
+
+4. **Remoção de Duplicatas**
+   - Identifica registros duplicados
+   - Remove mantendo apenas uma ocorrência
+
+5. **Padronização de Dados**
+   - Converte datas para formato datetime
+   - Converte valores para numérico
+   - Extrai informações temporais (ano, mês)
+
+6. **Análise Estatística**
+   - Calcula métricas descritivas
+   - Analisa por período (ano, mês)
+   - Identifica tendências e crescimento
+
+7. **Cálculo de Tendências**
+   - Crescimento total do período
+   - Crescimento ano a ano
+   - Identificação de períodos de destaque
+
+8. **Geração de Arquivos**
+   - Salva dados processados
+   - Gera relatórios e estatísticas
+   - Exporta em múltiplos formatos
+
+## Tecnologias Utilizadas
+
+- **Python 3.x**: Linguagem de programação
+- **pandas**: Manipulação e análise de dados
+- **numpy**: Operações numéricas e estatísticas
+- **openpyxl**: Geração de arquivos Excel
+- **datetime**: Manipulação de datas e horas
+
+## Características Técnicas
+
+### Tratamento de Erros
+
+- Validação de arquivos de entrada
+- Tratamento de exceções em todas as etapas
+- Mensagens de erro claras e informativas
+
+### Formatação e Visualização
+
+- Espaçamento adequado para melhor legibilidade
+- Tabelas formatadas com alinhamento consistente
+- Relatórios estruturados e organizados
+
+### Performance
+
+- Processamento eficiente de grandes volumes de dados
+- Uso otimizado de memória
+- Operações vetorizadas quando possível
+
+## Personalização
+
+### Modificar Arquivo de Entrada
+
+Edite a variável `ARQUIVO_ENTRADA` na função `main()`:
+
+```python
+ARQUIVO_ENTRADA = os.path.join(PASTA_DADOS, "seu_arquivo.csv")
+```
+
+### Modificar Pasta de Saída
+
+Altere a variável `PASTA_DADOS`:
+
+```python
+PASTA_DADOS = "data"  # ou outro diretório desejado
+```
+
+### Ajustar Formato de Data
+
+Se o formato de data for diferente, modifique na função `processar_dados()`:
+
+```python
+df['data'] = pd.to_datetime(df['data'], format='%d/%m/%Y', errors='coerce')
+```
+
+## Testes
+
+Execute os testes de ambiente para verificar se todas as dependências estão instaladas:
+
+```bash
+python tests/test_env.py
+```
+
+## Limitações
+
+Este projeto foi desenvolvido para processamento de dados tabulares em formato CSV. Não inclui:
+
+- Geração de gráficos e visualizações
+- Machine Learning ou modelos preditivos
+- Interface gráfica de usuário
+- Integração com bancos de dados
+- Processamento de dados não estruturados
+
+## Contribuições
+
+Contribuições e sugestões são bem-vindas. Para contribuir:
+
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature
+3. Commit suas mudanças
+4. Abra um Pull Request
+
+## Licença
+
+Este projeto é de código aberto e está disponível para uso público.
+
+## Autoria
+
+Projeto desenvolvido por **Codetria.DEV**
+
+## Suporte
+
+Para questões, problemas ou sugestões, abra uma issue no repositório do projeto.
+
+## Changelog
+
+### Versão Atual
+
+- Processamento completo de dados governamentais
+- Análise estatística detalhada
+- Geração de múltiplos formatos de saída
+- Formatação profissional e espaçamento adequado
+- Salvamento organizado na pasta de dados
+- Tratamento robusto de erros
+- Documentação completa
