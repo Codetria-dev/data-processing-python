@@ -5,6 +5,10 @@
 
 Data Processing Pipeline – Government Data (Python)
 Target use cases: data preprocessing, exploratory analysis and ETL prototyping.
+This project is a simple Python script designed to process and clean structured data from CSV files.
+It handles common data issues such as duplicates, missing values, and basic normalization, generating clean outputs ready for analysis or reporting.
+Ideal for small businesses or individual projects that need quick and reliable data preparation.
+
 
 Visão Geral
 
@@ -14,12 +18,12 @@ O projeto demonstra competências práticas em tratamento de dados, análise est
 
 Objetivo do Projeto
 
-Fornecer um pipeline simples, confiável e reutilizável para:
-Limpeza de dados brutos
-Padronização de colunas e tipos
-Geração de estatísticas descritivas
-Exportação dos dados tratados em múltiplos formatos
-
+  Fornecer um pipeline simples, confiável e reutilizável para:
+  Limpeza de dados brutos
+  Padronização de colunas e tipos
+  Geração de estatísticas descritivas
+  Exportação dos dados tratados em múltiplos formatos
+  
 
 Fonte dos Dados
 
@@ -28,24 +32,24 @@ https://dadosabertos.bcb.gov.br
 
 Funcionalidades
 
-Processamento de Dados:
-Leitura de arquivos CSV
-Padronização de nomes de colunas
-Tratamento de valores nulos
-Remoção de registros duplicados
-Conversão de tipos (datas e valores numéricos)
-Extração de informações temporais (ano e mês)
+  Processamento de Dados:
+  Leitura de arquivos CSV
+  Padronização de nomes de colunas
+  Tratamento de valores nulos
+  Remoção de registros duplicados
+  Conversão de tipos (datas e valores numéricos)
+  Extração de informações temporais (ano e mês)
 
 Análise Estatística:
-Estatísticas descritivas básicas
-Agregações por ano e por mês
-Identificação de períodos com maiores valores
+  Estatísticas descritivas básicas
+  Agregações por ano e por mês
+  Identificação de períodos com maiores valores
 
 Saídas Geradas:
-Dados tratados em CSV
-Versão Excel para visualização
-Relatório textual com estatísticas
-Arquivos CSV com estatísticas agregadas
+  Dados tratados em CSV
+  Versão Excel para visualização
+  Relatório textual com estatísticas
+  Arquivos CSV com estatísticas agregadas
 
 Estrutura do Projeto:
 
@@ -85,29 +89,29 @@ python src/process_data.py
 Após a execução, os arquivos processados serão gerados automaticamente na pasta *data/.*
 
 Fluxo do Pipeline:
-Leitura do CSV de entrada
-Padronização de colunas
-Limpeza e validação dos dados
-Conversão de tipos
-Geração de estatísticas
-Exportação dos resultados
+  Leitura do CSV de entrada
+  Padronização de colunas
+  Limpeza e validação dos dados
+  Conversão de tipos
+  Geração de estatísticas
+  Exportação dos resultados
 
 
 Características Técnicas
-Código simples e legível
-Estrutura organizada
-Processamento determinístico
-Foco em confiabilidade, não complexidade
+  Código simples e legível
+  Estrutura organizada
+  Processamento determinístico
+  Foco em confiabilidade, não complexidade
 
 
 Limitações
 
-Este projeto não inclui:
-Visualizações gráficas
-Machine Learning
-Integração com bancos de dados
-APIs ou interfaces gráficas
-O foco é tratamento inicial de dados.
+  Este projeto não inclui:
+  Visualizações gráficas
+  Machine Learning
+  Integração com bancos de dados
+  APIs ou interfaces gráficas
+  O foco é tratamento inicial de dados.
 
 Licença
 MIT License.
