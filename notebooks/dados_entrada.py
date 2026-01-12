@@ -429,6 +429,10 @@ RELATORIO GERADO EM: {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}
         print(" " * 10 + f"[ERRO] Erro ao salvar relatorio: {e}")
         print()
 
+    # Exibir relatório na tela
+    print(relatorio)
+    print()
+
     return relatorio
 
 
